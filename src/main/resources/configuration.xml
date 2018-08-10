@@ -26,5 +26,6 @@
     </environments>
     <mappers>
         <mapper resource="AdminMappler.xml"/>
+        <mapper resource="UserMappler.xml"/>
     </mappers>
 </configuration>
