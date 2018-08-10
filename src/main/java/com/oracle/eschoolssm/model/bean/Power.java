@@ -7,7 +7,6 @@ public class Power {
     private int powerid;
     private String powername;
     private String requesturl;
-    private int have;
     private Admin admin;
 
     public int getPowerid() {
@@ -34,14 +33,6 @@ public class Power {
         this.requesturl = requesturl;
     }
 
-    public int getHave() {
-        return have;
-    }
-
-    public void setHave(int have) {
-        this.have = have;
-    }
-
     public Admin getAdmin() {
         return admin;
     }
@@ -56,7 +47,7 @@ public class Power {
                 "powerid=" + powerid +
                 ", powername='" + powername + '\'' +
                 ", requesturl='" + requesturl + '\'' +
-                ", have=" + have +
+                ", admin=" + admin +
                 '}';
     }
 }

@@ -78,10 +78,10 @@
 			<div>
 				<ul class="breadcrumb">
 					<li>
-						<a href="#">线下集市公告</a> <span class="divider">/</span>
+						<a href="#">线下集市</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="#">线下集市公告列表</a>
+						<a href="#">参加线下集市商品记录</a>
 					</li>
 				</ul>
 			</div>	
@@ -89,7 +89,7 @@
 			<div class="row-fluid sortable">		
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-list-alt"></i>线下集市公告列表</h2>
+						<h2><i class="icon-list-alt"></i>线下集市商品列表</h2>
 						<div class="box-icon">
 							<a href="#" class="btn btn-setting btn-round">统计</a>
 							<a href="#" class="btn btn-setting btn-round">报表</a>
@@ -102,20 +102,21 @@
 						<table class="table table-striped table-bordered bootstrap-datatable datatable">
 						  <thead>
 							  <tr>
-								  <th>编号</th>
-								  <th>标题</th>
-								  <th>发布时间</th>
-								  <th>发布者</th>
-								  <th>操作</th>
+								  <th>参加线下集市商品编号</th>
+								  <th>商品名称</th>
+								  <th>商品成色</th>
+								  <th>商品数量</th>
+								  <th>商品预价格</th>
+								  <th>线下集市活动编号</th>
 							  </tr>
 						  </thead>   
 						  <tbody>
 
 							<tr>
-								<td>1</td>
-								<td>线下卖宠物</td>
-								<td class="center">2018/08/09</td>
-								<td class="center">袁锐</td>
+								<td class="center">1</td>
+								<td class="center">小米4</td>
+								<td class="center">没有描述</td>
+								<td class="center">8成新</td>
 								<td class="center">
 									<a class="btn btn-info" href="announcement.jsp">
 										<i class="icon-edit icon-white"></i>  

@@ -14,4 +14,5 @@ public interface AdminDAO {
     public boolean deleteAdmin(int adminid);
     //列出所有管理员的信息
     public List<Admin> listAdmin(int count, int page);
+    public List<Admin> getAdminList();
 }

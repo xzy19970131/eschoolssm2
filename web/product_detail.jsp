@@ -121,16 +121,13 @@
 											<strong>成色:</strong>8成新<br>
 											<strong>描述:</strong>没有描述<br>
 											<strong>下架时间:</strong>2018/8/16<br>
-											<strong>需求物品:</strong>没有<br>
 											<strong>发布时间:</strong>2018/8/9<br>
 
 										</li>
 										<li>
 											<strong>是否推广:</strong>否<br>
-											<strong>数量:</strong>20<br>
+											<strong>物品数量:</strong>20<br>
 											<strong>商品状态是销售还是下架:</strong>销售<br>
-											<strong>商品是可借还是不可借:</strong>可借<br>
-											<strong>是否参加线下集市:</strong>否<br>
 											<strong>分类:</strong>闲置数码<br>
 											<strong>用户编号:</strong>1<br>
 										</li>

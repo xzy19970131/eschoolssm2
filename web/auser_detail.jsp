@@ -125,18 +125,20 @@
 									<strong></strong><br>
 								</li>								
 								<li>								
-									<strong>用户名:</strong>${user.nickname}<br>
-									<strong>昵称:</strong>${user.username}<br>
-									<strong>性别:</strong>${user.sex}<br>
-									<strong>年龄:</strong>${user.age}<br>
+
+									<strong>用户名:</strong>yuanrui<br>
+									<strong>真实姓名:</strong>袁锐<br>
+									<strong>性别:</strong>男<br>
+									<strong>年龄:</strong>22<br>
 
 								</li>								
 								<li>
-									<strong>QQ:</strong>${user.qq}<br>
-									<strong>手机号:</strong>${user.phone}<br>
-									<strong>邮箱:</strong>${user.email}<br>
-									<strong>地址:</strong>${user.address}<br>
-									<strong>状态:</strong>${user.statue}<br>
+									<strong>QQ:</strong>1121595494<br>
+									<strong>手机号:</strong>18827551075<br>
+									<strong>邮箱:</strong>1121595494@@qq.com<br>
+									<strong>地址:</strong>湖北文理学院15栋308<br>
+									<strong>账号状态:</strong>正常<br>
+
 
 								</li>
 								<li>
