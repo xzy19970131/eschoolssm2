@@ -71,7 +71,7 @@
 
     <aop:config>
         <aop:pointcut id="pc"
-                      expression="execution(public * com.oracle.eschool.model.dao.*.*(..))" />
+                      expression="execution(public * com.oracle.eschoolssm.model.dao.*.*(..))" />
         <aop:advisor pointcut-ref="pc" advice-ref="userTxAdvice" />
     </aop:config>
 </beans>

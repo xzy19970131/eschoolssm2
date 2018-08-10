@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface UserDAO {
     public User getUserByID(int userid);
-    public List<User> listUser(int count, int page);
+    public List<User> listUser(int page, int count);
 }

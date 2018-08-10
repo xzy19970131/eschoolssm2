@@ -4,7 +4,6 @@ public class User {
       int userid ;
       String username;
       String password  ;
-      String nickname ;
       int sex  ;
       int age  ;
       String qq ;
@@ -14,49 +13,7 @@ public class User {
       String     address ;
       String  createtime  ;
       int statue ;
-
-
-  public User() {
-  }
-
-  public User(int userid) {
-    this.userid = userid;
-  }
-
-  public User(int userid, String username, String password, String nickname, int sex, int age, String qq, String phone, String email, String image, String address, String createtime, int statue) {
-    this.userid = userid;
-    this.username = username;
-    this.password = password;
-    this.nickname = nickname;
-    this.sex = sex;
-    this.age = age;
-    this.qq = qq;
-    this.phone = phone;
-    this.email = email;
-    this.image = image;
-    this.address = address;
-    this.createtime = createtime;
-    this.statue = statue;
-  }
-
-  @Override
-  public String toString() {
-    return "User{" +
-            "userid=" + userid +
-            ", username='" + username + '\'' +
-            ", password='" + password + '\'' +
-            ", nickname='" + nickname + '\'' +
-            ", sex=" + sex +
-            ", age=" + age +
-            ", qq='" + qq + '\'' +
-            ", phone='" + phone + '\'' +
-            ", email='" + email + '\'' +
-            ", image='" + image + '\'' +
-            ", address='" + address + '\'' +
-            ", createtime='" + createtime + '\'' +
-            ", statue=" + statue +
-            '}';
-  }
+      String realname;
 
   public int getUserid() {
     return userid;
@@ -80,14 +37,6 @@ public class User {
 
   public void setPassword(String password) {
     this.password = password;
-  }
-
-  public String getNickname() {
-    return nickname;
-  }
-
-  public void setNickname(String nickname) {
-    this.nickname = nickname;
   }
 
   public int getSex() {
@@ -160,5 +109,13 @@ public class User {
 
   public void setStatue(int statue) {
     this.statue = statue;
+  }
+
+  public String getRealname() {
+    return realname;
+  }
+
+  public void setRealname(String realname) {
+    this.realname = realname;
   }
 }

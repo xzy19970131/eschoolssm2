@@ -5,11 +5,12 @@ import com.oracle.eschoolssm.model.bean.Admin;
 import com.oracle.eschoolssm.model.bean.User;
 import com.oracle.eschoolssm.model.dao.AdminDAO;
 
-import com.oracle.eschoolssm.model.dao.SessionFactoryHelper;
+
 import com.oracle.eschoolssm.model.dao.UserDAO;
 
 import com.oracle.eschoolssm.service.AdminService;
 
+import com.oracle.eschoolssm.service.UserService;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.poi.util.IOUtils;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -28,13 +30,21 @@ import java.util.List;
 
 public class AdminController {
     private AdminService adminService;
-
+    private UserService userService;
     public AdminService getAdminService() {
         return adminService;
     }
 
     public void setAdminService(AdminService adminService) {
         this.adminService = adminService;
+    }
+
+    public UserService getUserService() {
+        return userService;
+    }
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 
     @RequestMapping("/login")
@@ -57,11 +67,6 @@ public class AdminController {
 
         return "admin_add_user";
     }
-    @RequestMapping("/list")
-    public String  listAdmin(@ModelAttribute("admin") Admin admin){
-
-        return "xxx.jsp";
-    }
 
 
     /*列出所有管理员*/
@@ -82,34 +87,37 @@ public class AdminController {
 
 
     @RequestMapping("/exportAdmin")
-    public void export(HttpServletResponse response) throws Exception{
-        InputStream is=adminService.getInputStream();
+    public void export(HttpServletResponse response) throws Exception {
+        InputStream is = adminService.getInputStream();
         response.setContentType("application/vnd.ms-excel");
         response.setHeader("contentDisposition", "attachment;filename=AllUsers.xls");
         ServletOutputStream output = response.getOutputStream();
-        IOUtils.copy(is,output);
+        IOUtils.copy(is, output);
+    }
 
 
     /*列出所有User*/
-    @RequestMapping("/userList")
-    public String  listLUser(Model model){
-        SqlSession session= SessionFactoryHelper.getSf().openSession();
-        UserDAO dao = session.getMapper(UserDAO.class);
-        List<User> users=dao.listUser(1,2);
+        @RequestMapping(value = "/userList")
+        public String listUser (Model model){
+            // SqlSession session= SessionFactoryHelper.getSf().openSession();
+            //UserDAO dao = session.getMapper(UserDAO.class);
+            List<User> users = userService.processlistUser(1, 2);
     /*    model.addAttribute("aaa",111);*/
-        model.addAttribute("allUser",users);
+            model.addAttribute("allUser", users);
 
-        for (User u:users){
-            System.out.println(u);
-        } return "auser_list";
-    }
+            for (User u : users) {
+                System.out.println(u);
+            }
+            return "auser_list";
+        }
 
     /*根据userid取得User*/
     @RequestMapping(value = "/userDetail"/*,params = "userid"*/)
     public String  getUserByID(@RequestParam("userid")int userid,Model model){
-        SqlSession session= SessionFactoryHelper.getSf().openSession();
-        UserDAO dao = session.getMapper(UserDAO.class);
-        User user =dao.getUserByID(userid);
+        //SqlSession session= SessionFactoryHelper.getSf().openSession();
+        //UserDAO dao = session.getMapper(UserDAO.class);
+       // User user =dao.getUserByID(userid);
+        User user =userService.processgetUserByID(userid);
         model.addAttribute("user",user);
         return "auser_detail";
 

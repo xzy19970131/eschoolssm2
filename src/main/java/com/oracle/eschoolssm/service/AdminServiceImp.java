@@ -2,7 +2,9 @@ package com.oracle.eschoolssm.service;
 
 
 import com.oracle.eschoolssm.model.bean.Admin;
+import com.oracle.eschoolssm.model.bean.User;
 import com.oracle.eschoolssm.model.dao.AdminDAO;
+import com.oracle.eschoolssm.model.dao.UserDAO;
 import com.oracle.eschoolssm.util.WriteExcel;
 import org.springframework.stereotype.Controller;
 
@@ -15,6 +17,15 @@ import java.util.List;
 public class AdminServiceImp implements AdminService {
 
     private AdminDAO  adminDAO;
+    private UserDAO userDAO;
+
+    public UserDAO getUserDAO() {
+        return userDAO;
+    }
+
+    public void setUserDAO(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
 
     public AdminDAO getAdminDAO() {
         return adminDAO;
@@ -37,7 +48,12 @@ public class AdminServiceImp implements AdminService {
         List<Admin> u=adminDAO.listAdmin(1,2);
         return u;
     }
-
+/*
+    public List<User> processlistUser(int count, int page) {
+        List<User> u=userDAO.listUser(1,2);
+        return u;
+    }
+*/
     public InputStream getInputStream() throws Exception {
         String[] title=new String[]{"adminid","username","password","xingming","phone","address"};
         List<Admin> plist=adminDAO.getAdminList();
