@@ -17,15 +17,6 @@ import java.util.List;
 public class AdminServiceImp implements AdminService {
 
     private AdminDAO  adminDAO;
-    private UserDAO userDAO;
-
-    public UserDAO getUserDAO() {
-        return userDAO;
-    }
-
-    public void setUserDAO(UserDAO userDAO) {
-        this.userDAO = userDAO;
-    }
 
     public AdminDAO getAdminDAO() {
         return adminDAO;
@@ -40,20 +31,15 @@ public class AdminServiceImp implements AdminService {
         return u;
     }
     //管理员添加
-    public Admin processAddAdmin(Admin admin) {
-        return null;
+    public boolean processAddAdmin(Admin admin) {
+        return adminDAO.addAdmin(admin);
     }
 
     public List<Admin> processlistAdmin(int count, int page) {
         List<Admin> u=adminDAO.listAdmin(1,2);
         return u;
     }
-/*
-    public List<User> processlistUser(int count, int page) {
-        List<User> u=userDAO.listUser(1,2);
-        return u;
-    }
-*/
+
     public InputStream getInputStream() throws Exception {
         String[] title=new String[]{"adminid","username","password","xingming","phone","address"};
         List<Admin> plist=adminDAO.getAdminList();

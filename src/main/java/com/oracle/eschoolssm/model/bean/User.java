@@ -1,19 +1,19 @@
 package com.oracle.eschoolssm.model.bean;
 
 public class User {
-      int userid ;
-      String username;
-      String password  ;
-      int sex  ;
-      int age  ;
-      String qq ;
-      String  phone ;
-      String email ;
-      String  image ;
-      String     address ;
-      String  createtime  ;
-      int statue ;
-      String realname;
+  private int userid ;
+  private String username;
+  private String password  ;
+  private int sex  ;
+  private int age  ;
+  private String qq ;
+  private String phone ;
+  private String email ;
+  private String image ;
+  private String address ;
+  private String createtime  ;
+  private int statue ;
+  private String realname;
 
   public int getUserid() {
     return userid;

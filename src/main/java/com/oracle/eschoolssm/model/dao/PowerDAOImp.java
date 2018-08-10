@@ -1,4 +1,7 @@
 package com.oracle.eschoolssm.model.dao;
 
-public class PowerDAOImp implements PowerDAO{
+import org.springframework.stereotype.Controller;
+
+@Controller("powerDAO")
+public class PowerDAOImp extends BaseDAO implements PowerDAO{
 }

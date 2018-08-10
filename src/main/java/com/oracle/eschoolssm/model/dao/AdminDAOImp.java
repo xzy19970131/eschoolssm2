@@ -17,6 +17,7 @@ public class AdminDAOImp extends BaseDAO implements AdminDAO {
     }
     //添加管理员
     public boolean addAdmin(Admin admin) {
+        getSqlSession().getMapper(AdminDAO.class);
         return false;
     }
 

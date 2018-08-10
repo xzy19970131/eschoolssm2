@@ -9,9 +9,32 @@ import java.util.List;
 
 
 public interface AdminService {
+    /**
+     * service处理管理员登录
+     * @param admin
+     * @return
+     */
     public Admin  processLogin(Admin admin);
-    public Admin processAddAdmin(Admin admin);
+
+    /**
+     * service处理管理员添加
+     * @param admin
+     * @return
+     */
+    public boolean processAddAdmin(Admin admin);
+
+    /**
+     * service处理列出所有管理员信息
+     * @param count
+     * @param page
+     * @return
+     */
     public List<Admin> processlistAdmin(int count, int page);
-   // public List<User> processlistUser(int count, int page);
+
+    /**
+     *service处理管理员导出Excel
+     * @return
+     * @throws Exception
+     */
     InputStream getInputStream() throws Exception;
 }

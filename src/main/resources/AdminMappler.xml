@@ -2,18 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.oracle.eschoolssm.model.dao.AdminDAO">
-
-
+    <!--  id 为AdminDAO的方法-->
     <select id="getInfoByUAndP"   resultType="com.oracle.eschoolssm.model.bean.Admin">
-
         select *  from admin where username=#{0} and password=#{1}
-
     </select>
+
     <select id="listAdmin"   resultType="com.oracle.eschoolssm.model.bean.Admin">
-
         select *  from admin;
-
     </select>
+    <insert id="addAdmin">
 
+    </insert>
 
 </mapper>

@@ -102,7 +102,7 @@
 						</div>
 					</div>
 					<div class="box-content">					
-					    <form id="myform" runat="server" action="#" method="post">
+					    <form id="myform" runat="server" action="/addAdmin" method="post">
                         <p>
                             <label>用户名：</label>
 							<input type="text" name="user" />

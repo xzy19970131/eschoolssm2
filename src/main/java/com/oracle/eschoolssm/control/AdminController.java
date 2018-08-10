@@ -27,10 +27,9 @@ import java.util.List;
 
 
 @Controller
-
 public class AdminController {
     private AdminService adminService;
-    private UserService userService;
+
     public AdminService getAdminService() {
         return adminService;
     }
@@ -39,47 +38,63 @@ public class AdminController {
         this.adminService = adminService;
     }
 
-    public UserService getUserService() {
-        return userService;
-    }
 
-    public void setUserService(UserService userService) {
-        this.userService = userService;
-    }
-
+    /**
+     * 管理员登录
+     * @param admin
+     * @return
+     */
     @RequestMapping("/login")
     public String  processLogin(@ModelAttribute("admin") Admin admin){
-        System.out.println("前："+admin);
+        System.out.println("进入管理员登录");
         Admin u=adminService.processLogin(admin);
-        System.out.println("后："+u);
         if(u==null)
         {
             return "login";
         }else
         {
-                    return "admin_add_user";
+            return "admin_add_user";
         }
 
     }
-    @RequestMapping("/add")
+
+    /**
+     * 添加管理员
+     * @param admin
+     * @return
+     */
+    @RequestMapping("/addAdmin")
     public String  addAdmin(@ModelAttribute("admin") Admin admin){
+        System.out.println("进入管理员添加");
+        boolean u=adminService.processAddAdmin(admin);
+        if(u==false)
+        {
+            return "admin_add_user";
+        }else
+        {
+            return "admin_list";
+        }
+    }
 
-
+    /**
+     * 删除管理员
+     * @param admin
+     * @return
+     */
+    @RequestMapping("/add")
+    public String  deleteAdmin(@ModelAttribute("admin") Admin admin){
         return "admin_add_user";
     }
 
-
-    /*列出所有管理员*/
+    /**
+     * 查看所有admin
+     * @param model
+     * @return
+     */
     @RequestMapping("/adminList")
     public String  listAdmin(Model model){
-        //SqlSession session= SessionFactoryHelper.getSf().openSession();
-        //AdminDAO dao = session.getMapper(AdminDAO.class);
-
-       // List<Admin> admins=AdminDAO.listAdmin(1,2);
         List<Admin> admins=adminService.processlistAdmin(1,2);
-    /*    model.addAttribute("aaa",111);*/
         model.addAttribute("allAdmin",admins);
-
         for (Admin a:admins){
             System.out.println(a);
         } return "admin_list";
@@ -94,33 +109,4 @@ public class AdminController {
         ServletOutputStream output = response.getOutputStream();
         IOUtils.copy(is, output);
     }
-
-
-    /*列出所有User*/
-        @RequestMapping(value = "/userList")
-        public String listUser (Model model){
-            // SqlSession session= SessionFactoryHelper.getSf().openSession();
-            //UserDAO dao = session.getMapper(UserDAO.class);
-            List<User> users = userService.processlistUser(1, 2);
-    /*    model.addAttribute("aaa",111);*/
-            model.addAttribute("allUser", users);
-
-            for (User u : users) {
-                System.out.println(u);
-            }
-            return "auser_list";
-        }
-
-    /*根据userid取得User*/
-    @RequestMapping(value = "/userDetail"/*,params = "userid"*/)
-    public String  getUserByID(@RequestParam("userid")int userid,Model model){
-        //SqlSession session= SessionFactoryHelper.getSf().openSession();
-        //UserDAO dao = session.getMapper(UserDAO.class);
-       // User user =dao.getUserByID(userid);
-        User user =userService.processgetUserByID(userid);
-        model.addAttribute("user",user);
-        return "auser_detail";
-
-    }
-
 }
