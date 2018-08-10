@@ -1,14 +1,17 @@
 package com.oracle.eschoolssm.model.dao;
 
 import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.support.SqlSessionDaoSupport;
 
-public class BaseDAO {
-    private SqlSession  session;
-    public BaseDAO(){
-        session=SessionFactoryHelper.getSf().openSession();
+public class BaseDAO extends SqlSessionDaoSupport {
+    private SqlSession sqlSession;
+
+    @Override
+    public SqlSession getSqlSession() {
+        return sqlSession;
     }
 
-    public SqlSession getSession() {
-        return session;
+    public void setSqlSession(SqlSession sqlSession) {
+        this.sqlSession = sqlSession;
     }
 }

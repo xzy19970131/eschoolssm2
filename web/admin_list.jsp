@@ -95,6 +95,8 @@
                     <div class="box-header well">
                         <h2><i class="icon-user"></i> 管理员列表</h2>
                         <div class="box-icon">
+                            <a href="#" class="btn btn-setting btn-round">统计</a>
+                            <a href="/exportAdmin" class="btn btn-setting btn-round">报表</a>
                             <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
                             <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
                             <a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
@@ -114,7 +116,6 @@
                                         <tr>
                                             <th>管理员编号</th>
                                             <th>用户名</th>
-
                                             <th>姓名</th>
                                             <th>联系方式</th>
                                             <th>地址</th>
@@ -127,16 +128,8 @@
                                             <tr>
                                                 <td>${t.adminid}</td>
                                                 <td class="center">${t.username}</td>
-
-                                                <td class="center">
-                                                    <span class="label label-success">${t.xingming}</span>
-                                                </td>
-                                                <td class="center">
-                                                    <a class="btn btn-success" href="auser_detail.jsp">
-                                                        <i class="icon-zoom-in icon-white"></i>
-                                                            ${t.phone}
-                                                    </a>
-                                                </td>
+                                                <td class="center">${t.xingming}</td>
+                                                <td class="center">${t.phone}</td>
                                                 <td class="center">${t.address}</td>
                                                 <td class="center">
                                                     <form name="biaoge">
@@ -144,6 +137,8 @@
                                                         <input type="checkbox" id ="a2" value="product">商品管理
                                                         <input type="checkbox"  id ="a3" value="order">订单管理
                                                         <input type="checkbox"  id ="a4" value="news">评论管理
+                                                        <input type="checkbox"  id ="a5" value="news">评论管理
+                                                        <input type="checkbox"  id ="a6" value="news">线下集市管理
                                                     </form>
                                                 </td>
                                             </tr>
@@ -161,48 +156,6 @@
                                         <h2>用户名</h2>
                                     </div>
                                     <div class="box-content">
-                                        <table class="table">
-                                            <thead>
-                                            <tr>
-                                                <th>Username</th>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>Muhammad Usman</td>
-                                                <td class="center"></td>
-                                                <td class="center"></td>
-                                                <td class="center"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>White Horse</td>
-                                                <td class="center"></td>
-                                                <td class="center"></td>
-                                                <td class="center"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sheikh Heera</td>
-                                                <td class="center"></td>
-                                                <td class="center"></td>
-                                                <td class="center"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Saruar</td>
-                                                <td class="center"></td>
-                                                <td class="center"></td>
-                                                <td class="center"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sana Amrin</td>
-                                                <td class="center"></td>
-                                                <td class="center"></td>
-                                                <td class="center"></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
                                         <div class="pagination pagination-centered">
                                             <ul>
                                                 <li><a href="#">Prev</a></li>
@@ -221,7 +174,9 @@
                         </div>
                     </div>
                 </div><!--/span-->
-
+            </div>
+        </div>
+    </div>
                 <!-- external javascript
                 ================================================== -->
                 <!-- Placed at the end of the document so the pages load faster -->

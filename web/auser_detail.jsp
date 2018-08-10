@@ -126,7 +126,7 @@
 								</li>								
 								<li>								
 									<strong>用户名:</strong>yuanrui<br>
-									<strong>昵称:</strong>袁锐<br>
+									<strong>真实姓名:</strong>袁锐<br>
 									<strong>性别:</strong>男<br>
 									<strong>年龄:</strong>22<br>
 
@@ -136,7 +136,7 @@
 									<strong>手机号:</strong>18827551075<br>
 									<strong>邮箱:</strong>1121595494@@qq.com<br>
 									<strong>地址:</strong>湖北文理学院15栋308<br>
-									<strong>状态:</strong>正常<br>
+									<strong>账号状态:</strong>正常<br>
 
 								</li>
 								<li>

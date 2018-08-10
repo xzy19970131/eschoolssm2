@@ -28,4 +28,10 @@ public class AdminDAOImp extends BaseDAO implements AdminDAO {
     public List<Admin> listAdmin(int count, int page) {
         return null;
     }
+
+    public List<Admin> getAdminList() {
+        AdminDAO dao=getSession().getMapper(AdminDAO.class);
+        return dao.getAdminList();
+    }
+
 }
