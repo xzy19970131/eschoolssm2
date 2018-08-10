@@ -125,6 +125,7 @@
 									<strong></strong><br>
 								</li>								
 								<li>								
+
 									<strong>用户名:</strong>yuanrui<br>
 									<strong>真实姓名:</strong>袁锐<br>
 									<strong>性别:</strong>男<br>
@@ -138,10 +139,11 @@
 									<strong>地址:</strong>湖北文理学院15栋308<br>
 									<strong>账号状态:</strong>正常<br>
 
+
 								</li>
 								<li>
-									<strong>创建时间:</strong>2018/08/09 12:00:00<br>
-									<strong>IP:</strong>172.19.22.111<br>
+									<strong>创建时间:</strong>${user.createtime}<br>
+									<strong>IP:</strong>172.19.22.111\<br>
 									<strong>登录次数:</strong>30<br>
 									<strong>上线时间:</strong>2018/08/09 12:00:10<br>
 									<strong>下线时间:</strong>2018/08/09 12:01:00<br>
@@ -149,7 +151,7 @@
 							</ul>
 						</div>						
 							<div class="form-actions">
-									<a class="btn btn-success" href="auser_list.jsp">
+									<a class="btn btn-success" href="/userList">
 										<i class="icon-repeat icon-white"></i> 
 										返回列表
 									</a>								

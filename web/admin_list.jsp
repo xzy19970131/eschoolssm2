@@ -128,8 +128,18 @@
                                             <tr>
                                                 <td>${t.adminid}</td>
                                                 <td class="center">${t.username}</td>
-                                                <td class="center">${t.xingming}</td>
-                                                <td class="center">${t.phone}</td>
+
+                                                <td class="center">${t.password}</td>
+                                                <td class="center">
+                                                    <span class="label label-success">${t.xingming}</span>
+                                                </td>
+                                                <td class="center">
+                                                    <a class="btn btn-success" href="auser_detail.jsp">
+                                                        <i class="icon-zoom-in icon-white"></i>
+                                                            ${t.phone}
+                                                    </a>
+                                                </td>
+
                                                 <td class="center">${t.address}</td>
                                                 <td class="center">
                                                     <form name="biaoge">
@@ -143,7 +153,29 @@
                                                 </td>
                                             </tr>
                                         </c:forEach>
-
+                                        <%--<tr>
+                                            <td>David R</td>
+                                            <td class="center">2012/01/01</td>
+                                            <td class="center">Member</td>
+                                            <td class="center">
+                                                <span class="label label-success">Active</span>
+                                            </td>
+                                            <td class="center">
+                                                <a class="btn btn-success" href="auser_detail.jsp">
+                                                    <i class="icon-zoom-in icon-white"></i>
+                                                    View
+                                                </a>
+                                            </td>
+                                            <td class="center">Member</td>
+                                            <td class="center">
+                                                <form name="biaoge">
+                                                <input type="checkbox" id ="a1"  value="user">用户管理
+                                                <input type="checkbox" id ="a2" value="product">商品管理
+                                                <input type="checkbox"  id ="a3" value="order">订单管理
+                                                <input type="checkbox"  id ="a4" value="news">评论管理
+                                                </form>
+                                            </td>
+                                        </tr>--%>
 
 
                                         </tbody>

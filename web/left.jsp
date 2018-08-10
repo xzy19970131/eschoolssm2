@@ -6,7 +6,7 @@
             <li class="nav-header hidden-tablet">用户管理</li>
             <li><a class="ajax-link" href="admin_add_user.jsp"><i class="icon-plus-sign"></i><span class="hidden-tablet">添加管理员</span></a></li>
             <li><a class="ajax-link" href="/adminList"><i class="icon-user"></i><span class="hidden-tablet"> 管理员列表</span></a></li>
-            <li><a class="ajax-link" href="auser_list.jsp"><i class="icon-user"></i><span class="hidden-tablet"> 用户列表</span></a></li>
+            <li><a class="ajax-link" href="/userList"><i class="icon-user"></i><span class="hidden-tablet"> 用户列表</span></a></li>
             <li class="nav-header hidden-tablet">二手商品管理</li>
             <li><a class="ajax-link" href="product_business_list.jsp"><i class="icon-list-alt"></i><span class="hidden-tablet">发布商品交易信息</span></a></li>
             <li><a class="ajax-link" href="product_renter_list.jsp"><i class="icon-list-alt"></i><span class="hidden-tablet">租赁物品信息记录</span></a></li>

@@ -2,7 +2,12 @@ package com.oracle.eschoolssm.control;
 
 
 import com.oracle.eschoolssm.model.bean.Admin;
+import com.oracle.eschoolssm.model.bean.User;
 import com.oracle.eschoolssm.model.dao.AdminDAO;
+
+import com.oracle.eschoolssm.model.dao.SessionFactoryHelper;
+import com.oracle.eschoolssm.model.dao.UserDAO;
+
 import com.oracle.eschoolssm.service.AdminService;
 
 import org.apache.ibatis.session.SqlSession;
@@ -11,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -74,6 +80,7 @@ public class AdminController {
         } return "admin_list";
     }
 
+
     @RequestMapping("/exportAdmin")
     public void export(HttpServletResponse response) throws Exception{
         InputStream is=adminService.getInputStream();
@@ -81,6 +88,31 @@ public class AdminController {
         response.setHeader("contentDisposition", "attachment;filename=AllUsers.xls");
         ServletOutputStream output = response.getOutputStream();
         IOUtils.copy(is,output);
+
+
+    /*列出所有User*/
+    @RequestMapping("/userList")
+    public String  listLUser(Model model){
+        SqlSession session= SessionFactoryHelper.getSf().openSession();
+        UserDAO dao = session.getMapper(UserDAO.class);
+        List<User> users=dao.listUser(1,2);
+    /*    model.addAttribute("aaa",111);*/
+        model.addAttribute("allUser",users);
+
+        for (User u:users){
+            System.out.println(u);
+        } return "auser_list";
+    }
+
+    /*根据userid取得User*/
+    @RequestMapping(value = "/userDetail"/*,params = "userid"*/)
+    public String  getUserByID(@RequestParam("userid")int userid,Model model){
+        SqlSession session= SessionFactoryHelper.getSf().openSession();
+        UserDAO dao = session.getMapper(UserDAO.class);
+        User user =dao.getUserByID(userid);
+        model.addAttribute("user",user);
+        return "auser_detail";
+
     }
 
 }

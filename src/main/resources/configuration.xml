@@ -19,6 +19,11 @@
         </environment>
     </environments>-->
     <mappers>
-        <mapper resource="AdminMappler.xml"></mapper>
+
+    
+
+        <mapper resource="AdminMappler.xml"/>
+        <mapper resource="UserMappler.xml"/>
+
     </mappers>
 </configuration>

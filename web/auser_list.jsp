@@ -117,8 +117,23 @@
 										</tr>
 										</thead>
 										<tbody>
-
-										<tr>
+										<c:forEach  var="t"  items="${allUser}" varStatus="s">
+											<tr>
+												<td>${t.userid}</td>
+												<td class="center">${t.username}</td>
+												<td class="center">${t.email}</td>
+												<td class="center">
+													<span class="label label-warning">${t.statue}</span>
+												</td>
+												<td class="center">
+													<a class="btn btn-success" href="/userDetail?userid=${t.userid}">
+														<i class="icon-zoom-in icon-white"></i>
+														View
+													</a>
+												</td>
+											</tr>
+										</c:forEach>
+										<%--<tr>
 											<td>1</td>
 											<td class="center">yuanrui</td>
 											<td class="center">1121595494@qq.com</td>
@@ -131,7 +146,7 @@
 													View
 												</a>
 											</td>
-										</tr>
+										</tr>--%>
 										</tbody>
 									</table>
 								</div>
