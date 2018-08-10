@@ -33,6 +33,11 @@ public class AdminServiceImp implements AdminService {
         return null;
     }
 
+    public List<Admin> processlistAdmin(int count, int page) {
+        List<Admin> u=adminDAO.listAdmin(1,2);
+        return u;
+    }
+
     public InputStream getInputStream() throws Exception {
         String[] title=new String[]{"adminid","username","password","xingming","phone","address"};
         List<Admin> plist=adminDAO.getAdminList();

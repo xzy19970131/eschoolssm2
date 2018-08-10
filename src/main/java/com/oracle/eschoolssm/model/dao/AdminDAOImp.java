@@ -11,7 +11,7 @@ import java.util.List;
 public class AdminDAOImp extends BaseDAO implements AdminDAO {
     //管理员登录
     public Admin getInfoByUAndP(String username, String password) {
-       AdminDAO dao= getSession().getMapper(AdminDAO.class);
+       AdminDAO dao= getSqlSession().getMapper(AdminDAO.class);
         return  dao.getInfoByUAndP(username,password);
 
     }
@@ -26,11 +26,12 @@ public class AdminDAOImp extends BaseDAO implements AdminDAO {
 
     //列出所有管理员的信息
     public List<Admin> listAdmin(int count, int page) {
-        return null;
+        AdminDAO dao=getSqlSession().getMapper(AdminDAO.class);
+        return dao.listAdmin(1,2);
     }
 
     public List<Admin> getAdminList() {
-        AdminDAO dao=getSession().getMapper(AdminDAO.class);
+        AdminDAO dao=getSqlSession().getMapper(AdminDAO.class);
         return dao.getAdminList();
     }
 

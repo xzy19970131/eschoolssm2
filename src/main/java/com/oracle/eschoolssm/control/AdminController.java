@@ -64,7 +64,8 @@ public class AdminController {
         //SqlSession session= SessionFactoryHelper.getSf().openSession();
         //AdminDAO dao = session.getMapper(AdminDAO.class);
 
-        List<Admin> admins=AdminDAO.listAdmin(1,2);
+       // List<Admin> admins=AdminDAO.listAdmin(1,2);
+        List<Admin> admins=adminService.processlistAdmin(1,2);
     /*    model.addAttribute("aaa",111);*/
         model.addAttribute("allAdmin",admins);
 

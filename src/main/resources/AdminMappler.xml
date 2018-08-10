@@ -15,10 +15,5 @@
 
     </select>
 
-    <select id="getAdminList" parameterType="int" resultMap="com.oracle.eschoolssm.model.bean.Admin">
-
-          select * from admin;
-
-  </select>
 
 </mapper>
