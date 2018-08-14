@@ -1,0 +1,15 @@
+<?xml  version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oracle.eschoolssm.model.dao.CommentDAO">
+
+    <resultMap id="commentMap" type="com.oracle.eschoolssm.model.bean.Comment">
+        <id property="commentid" column="commentid"/>
+        <result property="time" column="time"/>
+        <result property="count" column="count"/>
+
+    </resultMap>
+    <select id="selectCommentAndProduct" resultType="com.oracle.eschoolssm.model.bean.Comment">
+        select * from comment
+    </select>
+</mapper>

@@ -28,7 +28,7 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://127.0.0.1:3306/eschool?characterEncoding=UTF8"/>
         <property name="username" value="root"/>
-        <property name="password" value="1234"/>
+        <property name="password" value="root"/>
     </bean>
 
     <!--让spring来托管sqlsessionfactory的创建-->
@@ -68,11 +68,11 @@
             <tx:method name="select*" propagation="SUPPORTS" />
         </tx:attributes>
     </tx:advice>
-
+    <!-- 配置事物切面 -->
     <aop:config>
-        <aop:pointcut id="pc"
-                      expression="execution(public * com.oracle.eschoolssm.model.dao.*.*(..))" />
-        <aop:advisor pointcut-ref="pc" advice-ref="userTxAdvice" />
+        <aop:pointcut id="serviceOperation"
+                      expression="execution( * com.oracle.eschoolssm.service.*.*(..))" />
+        <aop:advisor pointcut-ref="serviceOperation" advice-ref="userTxAdvice" />
     </aop:config>
 </beans>
 

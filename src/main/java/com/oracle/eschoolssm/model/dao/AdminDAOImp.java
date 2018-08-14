@@ -17,12 +17,15 @@ public class AdminDAOImp extends BaseDAO implements AdminDAO {
     }
     //添加管理员
     public boolean addAdmin(Admin admin) {
-        getSqlSession().getMapper(AdminDAO.class);
-        return false;
+        System.out.println("进了Dao的"+admin);
+        AdminDAO dao= getSqlSession().getMapper(AdminDAO.class);
+        return  dao.addAdmin(admin);
     }
-
+    //删除管理员
     public boolean deleteAdmin(int adminid) {
-        return false;
+        AdminDAO dao=getSqlSession().getMapper(AdminDAO.class);
+        return dao.deleteAdmin(adminid);
+
     }
 
     //列出所有管理员的信息
@@ -30,7 +33,7 @@ public class AdminDAOImp extends BaseDAO implements AdminDAO {
         AdminDAO dao=getSqlSession().getMapper(AdminDAO.class);
         return dao.listAdmin(1,2);
     }
-
+    //Excel导出所有管理员的信息
     public List<Admin> getAdminList() {
         AdminDAO dao=getSqlSession().getMapper(AdminDAO.class);
         return dao.getAdminList();

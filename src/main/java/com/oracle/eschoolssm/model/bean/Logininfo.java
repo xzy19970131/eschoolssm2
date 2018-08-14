@@ -5,7 +5,7 @@ public class Logininfo {
     private String ip;
     private String logintime;
     private String endtime;
-    private int userid;
+    private User user;
 
     public int getLogininfoid() {
         return logininfoid;
@@ -39,11 +39,11 @@ public class Logininfo {
         this.endtime = endtime;
     }
 
-    public int getUserid() {
-        return userid;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserid(int userid) {
-        this.userid = userid;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -120,38 +120,37 @@
                                             <th>联系方式</th>
                                             <th>地址</th>
                                             <th>权限</th>
+                                            <th>操作</th>
 
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <c:forEach  var="t"  items="${allAdmin}" varStatus="s">
                                             <tr>
-                                                <td>${t.adminid}</td>
+                                                <td class="center">${t.adminid}</td>
                                                 <td class="center">${t.username}</td>
-
-                                                <td class="center">${t.password}</td>
-                                                <td class="center">
-                                                    <span class="label label-success">${t.xingming}</span>
-                                                </td>
-                                                <td class="center">
-                                                    <a class="btn btn-success" href="auser_detail.jsp">
-                                                        <i class="icon-zoom-in icon-white"></i>
-                                                            ${t.phone}
-                                                    </a>
-                                                </td>
-
+                                                <td class="center">${t.xingming}</td>
+                                                <td class="center">${t.phone}</td>
                                                 <td class="center">${t.address}</td>
                                                 <td class="center">
-                                                    <form name="biaoge">
+                                                    <form name="">
                                                         <input type="checkbox" id ="a1"  value="user">用户管理
                                                         <input type="checkbox" id ="a2" value="product">商品管理
-                                                        <input type="checkbox"  id ="a3" value="order">订单管理
-                                                        <input type="checkbox"  id ="a4" value="news">评论管理
-                                                        <input type="checkbox"  id ="a5" value="news">评论管理
-                                                        <input type="checkbox"  id ="a6" value="news">线下集市管理
+                                                        <input type="checkbox"  id ="a3" value="order">商品信息记录管理
+                                                        <br>
+                                                        <input type="checkbox"  id ="a4" value="news">评论和回复管理
+                                                        <input type="checkbox"  id ="a5" value="news">线下集市管理
+                                                        <input type="checkbox"  id ="a6" value="news">二手经纪人管理
                                                     </form>
                                                 </td>
+                                                <td class="center">
+                                                    <a class="btn btn-success" href="/deleteAdmin?adminid=${t.adminid}">
+                                                        <i class="icon-zoom-in icon-white"></i>
+                                                        delete
+                                                    </a>
+                                                </td>
                                             </tr>
+
                                         </c:forEach>
 
                                         </tbody>

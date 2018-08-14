@@ -2,17 +2,18 @@ package com.oracle.eschoolssm.service;
 
 
 import com.oracle.eschoolssm.model.bean.Admin;
-import com.oracle.eschoolssm.model.bean.User;
 import com.oracle.eschoolssm.model.dao.AdminDAO;
-import com.oracle.eschoolssm.model.dao.UserDAO;
 import com.oracle.eschoolssm.util.WriteExcel;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Transactional(propagation= Propagation.REQUIRED,isolation= Isolation.DEFAULT,timeout=5)
 @Controller("adminService")
 public class AdminServiceImp implements AdminService {
 
@@ -32,7 +33,14 @@ public class AdminServiceImp implements AdminService {
     }
     //管理员添加
     public boolean processAddAdmin(Admin admin) {
-        return adminDAO.addAdmin(admin);
+        Boolean aBoolean = adminDAO.addAdmin(admin);
+        return aBoolean;
+    }
+
+    public boolean processdeleteAdmin(int adminid) {
+         Boolean aBoolean=adminDAO.deleteAdmin(adminid);
+
+         return aBoolean;
     }
 
     public List<Admin> processlistAdmin(int count, int page) {

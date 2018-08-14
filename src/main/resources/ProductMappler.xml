@@ -3,9 +3,40 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.oracle.eschoolssm.model.dao.ProductDAO">
     <!--  id 为ProductDAO的方法-->
+    <resultMap id="ProductMap" type="com.oracle.eschoolssm.model.bean.Product" >
+        <!--  第一部分，先把主bean的列值提取映射到对应到bean属性 -->
+        <id property="productid" column="productid"/>
+        <result property="name" column="name"/>
+        <result property="costprice" column="costprice"/>
+        <result property="nowprice" column="nowprice"/>
+        <result property="discount" column="discount"/>
+        <result property="quality" column="quality"/>
+        <result property="describle" column="describle"/>
+        <result property="endtime" column="endtime"/>
+        <result property="starttime" column="starttime"/>
+        <result property="promotion" column="promotion"/>
+        <result property="count" column="count"/>
+        <result property="shelves" column="shelves"/>
+
+        <!--  配置主对象关联到多对象信息 one-many -->
+        <collection property="comment" ofType="com.oracle.eschoolssm.model.bean.Comment">
+            <id property="commentid " column="commentid "/>
+            <result property="time" column="time"/>
+            <result property="count" column="count"/>
+        </collection>
+    </resultMap>
 
     <select id="listProduct"   resultType="com.oracle.eschoolssm.model.bean.Product">
         select *  from product;
     </select>
+    <select id="getProductByID"   resultType="com.oracle.eschoolssm.model.bean.Product">
+        select *  from product WHERE productid=#{0};
+    </select>
+    <select id="getProductList"   resultType="com.oracle.eschoolssm.model.bean.Product">
+        select *  from product
+    </select>
 
+    <delete id="deleteProductByID">
+        DELETE FROM product WHERE productid= #{0};
+    </delete>
 </mapper>

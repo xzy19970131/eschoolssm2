@@ -2,7 +2,6 @@ package com.oracle.eschoolssm.service;
 
 
 import com.oracle.eschoolssm.model.bean.Admin;
-import com.oracle.eschoolssm.model.bean.User;
 
 import java.io.InputStream;
 import java.util.List;
@@ -22,6 +21,7 @@ public interface AdminService {
      * @return
      */
     public boolean processAddAdmin(Admin admin);
+    public boolean processdeleteAdmin(int adminid);
 
     /**
      * service处理列出所有管理员信息

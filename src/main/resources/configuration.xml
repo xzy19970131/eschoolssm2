@@ -24,6 +24,7 @@
 
         <mapper resource="AdminMappler.xml"/>
         <mapper resource="UserMappler.xml"/>
-
+        <mapper resource="ProductMappler.xml"/>
+        <mapper resource="CommentMappler.xml"/>
     </mappers>
 </configuration>

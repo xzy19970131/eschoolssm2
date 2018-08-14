@@ -92,7 +92,7 @@
 						<h2><i class="icon-user"></i> 用户列表</h2>
 						<div class="box-icon">
 							<a href="#" class="btn btn-setting btn-round">统计</a>
-							<a href="#" class="btn btn-setting btn-round">报表</a>
+							<a href="javascript:void(0)" onclick="location.href='/exportUser'" class="btn btn-setting btn-round">报表</a>
 							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
 							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
@@ -157,48 +157,7 @@
 										<h2>用户名</h2>
 									</div>
 									<div class="box-content">
-										<table class="table">
-											<thead>
-											<tr>
-												<th>Username</th>
-												<th></th>
-												<th></th>
-												<th></th>
-											</tr>
-											</thead>
-											<tbody>
-											<tr>
-												<td>Muhammad Usman</td>
-												<td class="center"></td>
-												<td class="center"></td>
-												<td class="center"></td>
-											</tr>
-											<tr>
-												<td>White Horse</td>
-												<td class="center"></td>
-												<td class="center"></td>
-												<td class="center"></td>
-											</tr>
-											<tr>
-												<td>Sheikh Heera</td>
-												<td class="center"></td>
-												<td class="center"></td>
-												<td class="center"></td>
-											</tr>
-											<tr>
-												<td>Saruar</td>
-												<td class="center"></td>
-												<td class="center"></td>
-												<td class="center"></td>
-											</tr>
-											<tr>
-												<td>Sana Amrin</td>
-												<td class="center"></td>
-												<td class="center"></td>
-												<td class="center"></td>
-											</tr>
-											</tbody>
-										</table>
+
 										<div class="pagination pagination-centered">
 											<ul>
 												<li><a href="#">Prev</a></li>

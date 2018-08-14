@@ -23,12 +23,12 @@
 	<!-- The styles -->
 	<link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet">
 	<style type="text/css">
-	  body {
-		padding-bottom: 40px;
-	  }
-	  .sidebar-nav {
-		padding: 9px 0;
-	  }
+		body {
+			padding-bottom: 40px;
+		}
+		.sidebar-nav {
+			padding: 9px 0;
+		}
 	</style>
 	<link href="css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="css/charisma-app.css" rel="stylesheet">
@@ -49,12 +49,12 @@
 
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
-	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
 	<!-- The fav icon -->
 	<link rel="shortcut icon" href="img/favicon.ico">
-		
+
 </head>
 
 <body>
@@ -65,17 +65,17 @@
 	<div class="row-fluid">
 		<%--左边部分left--%>
 		<c:import url="left.jsp"></c:import>
-			
-			<noscript>
-				<div class="alert alert-block span10">
-					<h4 class="alert-heading">Warning!</h4>
-					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
-				</div>
-			</noscript>
-			
-			<div id="content" class="span10">
-			<!-- content starts -->			
-			
+
+		<noscript>
+			<div class="alert alert-block span10">
+				<h4 class="alert-heading">Warning!</h4>
+				<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+			</div>
+		</noscript>
+
+		<div id="content" class="span10">
+			<!-- content starts -->
+
 			<div>
 				<ul class="breadcrumb">
 					<li>
@@ -86,11 +86,11 @@
 					</li>
 				</ul>
 			</div>
-			
+
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-					  <h2>商品详细信息</h2>
+						<h2>商品详细信息</h2>
 						<div class="box-icon">
 							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -111,25 +111,25 @@
 											<strong></strong><br>
 										</li>
 										<li>
-											<strong>名称:</strong>小米4<br>
-											<strong>原价:</strong>1700<br>
-											<strong>现价:</strong>700<br>
-											<strong>是否砍价:</strong>否<br>
+											<strong>名称:</strong>${product.name}<br>
+											<strong>原价:</strong>${product.costprice}<br>
+											<strong>现价:</strong>${product.nowprice}<br>
+											<strong>是否砍价:</strong>${product.discount}<br>
 
 										</li>
 										<li>
-											<strong>成色:</strong>8成新<br>
-											<strong>描述:</strong>没有描述<br>
-											<strong>下架时间:</strong>2018/8/16<br>
-											<strong>发布时间:</strong>2018/8/9<br>
+											<strong>成色:</strong>${product.quality}<br>
+											<strong>描述:</strong>${product.describle}<br>
+											<strong>下架时间:</strong>${product.endtime}<br>
+											<strong>发布时间:</strong>${product.starttime}<br>
 
 										</li>
 										<li>
-											<strong>是否推广:</strong>否<br>
-											<strong>物品数量:</strong>20<br>
-											<strong>商品状态是销售还是下架:</strong>销售<br>
-											<strong>分类:</strong>闲置数码<br>
-											<strong>用户编号:</strong>1<br>
+											<strong>是否推广:</strong>${product.promotion}<br>
+											<strong>物品数量:</strong>${product.count}<br>
+											<strong>商品状态是销售还是下架:</strong>${product.shelves}<br>
+											<strong>分类:</strong>${product.id}<br>
+											<strong>用户编号:</strong>${product.userid}<br>
 										</li>
 									</ul>
 								</div>
@@ -150,83 +150,83 @@
 				</div><!--/span-->
 
 			</div><!--/row-->
-			</div>
+		</div>
 	</div>
 </div>
-	<!-- external javascript
-	================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
+<!-- external javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
 
-	<!-- jQuery -->
-	<script src="js/jquery-1.7.2.min.js"></script>
-	<!-- jQuery UI -->
-	<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
-	<!-- transition / effect library -->
-	<script src="js/bootstrap-transition.js"></script>
-	<!-- alert enhancer library -->
-	<script src="js/bootstrap-alert.js"></script>
-	<!-- modal / dialog library -->
-	<script src="js/bootstrap-modal.js"></script>
-	<!-- custom dropdown library -->
-	<script src="js/bootstrap-dropdown.js"></script>
-	<!-- scrolspy library -->
-	<script src="js/bootstrap-scrollspy.js"></script>
-	<!-- library for creating tabs -->
-	<script src="js/bootstrap-tab.js"></script>
-	<!-- library for advanced tooltip -->
-	<script src="js/bootstrap-tooltip.js"></script>
-	<!-- popover effect library -->
-	<script src="js/bootstrap-popover.js"></script>
-	<!-- button enhancer library -->
-	<script src="js/bootstrap-button.js"></script>
-	<!-- accordion library (optional, not used in demo) -->
-	<script src="js/bootstrap-collapse.js"></script>
-	<!-- carousel slideshow library (optional, not used in demo) -->
-	<script src="js/bootstrap-carousel.js"></script>
-	<!-- autocomplete library -->
-	<script src="js/bootstrap-typeahead.js"></script>
-	<!-- tour library -->
-	<script src="js/bootstrap-tour.js"></script>
-	<!-- library for cookie management -->
-	<script src="js/jquery.cookie.js"></script>
-	<!-- calander plugin -->
-	<script src='js/fullcalendar.min.js'></script>
-	<!-- data table plugin -->
-	<script src='js/jquery.dataTables.min.js'></script>
+<!-- jQuery -->
+<script src="js/jquery-1.7.2.min.js"></script>
+<!-- jQuery UI -->
+<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+<!-- transition / effect library -->
+<script src="js/bootstrap-transition.js"></script>
+<!-- alert enhancer library -->
+<script src="js/bootstrap-alert.js"></script>
+<!-- modal / dialog library -->
+<script src="js/bootstrap-modal.js"></script>
+<!-- custom dropdown library -->
+<script src="js/bootstrap-dropdown.js"></script>
+<!-- scrolspy library -->
+<script src="js/bootstrap-scrollspy.js"></script>
+<!-- library for creating tabs -->
+<script src="js/bootstrap-tab.js"></script>
+<!-- library for advanced tooltip -->
+<script src="js/bootstrap-tooltip.js"></script>
+<!-- popover effect library -->
+<script src="js/bootstrap-popover.js"></script>
+<!-- button enhancer library -->
+<script src="js/bootstrap-button.js"></script>
+<!-- accordion library (optional, not used in demo) -->
+<script src="js/bootstrap-collapse.js"></script>
+<!-- carousel slideshow library (optional, not used in demo) -->
+<script src="js/bootstrap-carousel.js"></script>
+<!-- autocomplete library -->
+<script src="js/bootstrap-typeahead.js"></script>
+<!-- tour library -->
+<script src="js/bootstrap-tour.js"></script>
+<!-- library for cookie management -->
+<script src="js/jquery.cookie.js"></script>
+<!-- calander plugin -->
+<script src='js/fullcalendar.min.js'></script>
+<!-- data table plugin -->
+<script src='js/jquery.dataTables.min.js'></script>
 
-	<!-- chart libraries start -->
-	<script src="js/excanvas.js"></script>
-	<script src="js/jquery.flot.min.js"></script>
-	<script src="js/jquery.flot.pie.min.js"></script>
-	<script src="js/jquery.flot.stack.js"></script>
-	<script src="js/jquery.flot.resize.min.js"></script>
-	<!-- chart libraries end -->
+<!-- chart libraries start -->
+<script src="js/excanvas.js"></script>
+<script src="js/jquery.flot.min.js"></script>
+<script src="js/jquery.flot.pie.min.js"></script>
+<script src="js/jquery.flot.stack.js"></script>
+<script src="js/jquery.flot.resize.min.js"></script>
+<!-- chart libraries end -->
 
-	<!-- select or dropdown enhancer -->
-	<script src="js/jquery.chosen.min.js"></script>
-	<!-- checkbox, radio, and file input styler -->
-	<script src="js/jquery.uniform.min.js"></script>
-	<!-- plugin for gallery image view -->
-	<script src="js/jquery.colorbox.min.js"></script>
-	<!-- rich text editor library -->
-	<script src="js/jquery.cleditor.min.js"></script>
-	<!-- notification plugin -->
-	<script src="js/jquery.noty.js"></script>
-	<!-- file manager library -->
-	<script src="js/jquery.elfinder.min.js"></script>
-	<!-- star rating plugin -->
-	<script src="js/jquery.raty.min.js"></script>
-	<!-- for iOS style toggle switch -->
-	<script src="js/jquery.iphone.toggle.js"></script>
-	<!-- autogrowing textarea plugin -->
-	<script src="js/jquery.autogrow-textarea.js"></script>
-	<!-- multiple file upload plugin -->
-	<script src="js/jquery.uploadify-3.1.min.js"></script>
-	<!-- history.js for cross-browser state change on ajax -->
-	<script src="js/jquery.history.js"></script>
-	<!-- application script for Charisma demo -->
-	<script src="js/charisma.js"></script>
-	
-		
+<!-- select or dropdown enhancer -->
+<script src="js/jquery.chosen.min.js"></script>
+<!-- checkbox, radio, and file input styler -->
+<script src="js/jquery.uniform.min.js"></script>
+<!-- plugin for gallery image view -->
+<script src="js/jquery.colorbox.min.js"></script>
+<!-- rich text editor library -->
+<script src="js/jquery.cleditor.min.js"></script>
+<!-- notification plugin -->
+<script src="js/jquery.noty.js"></script>
+<!-- file manager library -->
+<script src="js/jquery.elfinder.min.js"></script>
+<!-- star rating plugin -->
+<script src="js/jquery.raty.min.js"></script>
+<!-- for iOS style toggle switch -->
+<script src="js/jquery.iphone.toggle.js"></script>
+<!-- autogrowing textarea plugin -->
+<script src="js/jquery.autogrow-textarea.js"></script>
+<!-- multiple file upload plugin -->
+<script src="js/jquery.uploadify-3.1.min.js"></script>
+<!-- history.js for cross-browser state change on ajax -->
+<script src="js/jquery.history.js"></script>
+<!-- application script for Charisma demo -->
+<script src="js/charisma.js"></script>
+
+
 </body>
 </html>

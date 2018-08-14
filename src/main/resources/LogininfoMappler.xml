@@ -2,10 +2,41 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.oracle.eschoolssm.model.dao.LogininfoDAO">
+    <!-- 定义数据库字段与实体对象的映射关系  -->
+    <resultMap id="logininfoMap" type="com.oracle.eschoolssm.model.bean.Logininfo">
+        <id property="logininfoid" column="logininfoid" />
+        <result property="ip" column="ip" />
+        <result property="logintime" column="logintime" />
+        <result property="endtime" column="endtime" />
+        <!-- 一对一的关系 -->
+        <!-- property: 指的是属性的值, javaType：指的是元素的类型 -->
+        <association property="logininfo" javaType="User">
+            <id property="userid" column="userid"/>
+            <result property="username" column="username"/>
+            <result property="password" column="password"/>
+            <result property="sex" column="sex"/>
+            <result property="age" column="age"/>
+            <result property="qq" column="qq"/>
+            <result property="phone" column="phone"/>
+            <result property="email" column="email"/>
+            <result property="createtime" column="createtime"/>
+            <result property="statue" column="statue"/>
+            <result property="realname" column="realname"/>
+        </association>
+    </resultMap>
 
+    <select id="getUserByID"   resultType="com.oracle.eschoolssm.model.bean.User">
 
-    <select id="getUserinfoByID"   resultType="com.oracle.eschoolssm.model.bean.Logininfo">
-        select *  from logininfo where userid=#{0};
+        select *  from USER where userid=#{0};
+
+    </select>
+    <select id="listUser"   resultType="com.oracle.eschoolssm.model.bean.User">
+        select *  from USER;
+    </select>
+    <!-- 根据id查询logininfo, 关联将User查询出来 -->
+    <select id="selectlogininfoById" parameterType="int" resultMap="logininfoMap">
+        select u.*,l.* from user u,logininfo l where
+        u.userid=l.logininfoid and l.logininfoid =#{logininfoid}
     </select>
 
 </mapper>

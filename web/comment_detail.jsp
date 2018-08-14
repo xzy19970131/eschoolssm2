@@ -79,10 +79,10 @@
 			<div>
 				<ul class="breadcrumb">
 					<li>
-						<a href="#">用户发布信息管理</a> <span class="divider">/</span>
+						<a href="#">用户评论信息管理</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="#">详细信息</a>
+						<a href="#">评论详细信息</a>
 					</li>
 				</ul>
 			</div>

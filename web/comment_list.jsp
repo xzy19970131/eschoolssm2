@@ -78,10 +78,10 @@
 			<div>
 				<ul class="breadcrumb">
 					<li>
-						<a href="#">旅游攻略</a> <span class="divider">/</span>
+						<a href="#">评论管理</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="#">攻略列表</a>
+						<a href="#">评论列表</a>
 					</li>
 				</ul>
 			</div>
@@ -109,11 +109,11 @@
 							  </tr>
 						  </thead>   
 						  <tbody>
-
+							<c:forEach  var="t"  items="${allComment}" varStatus="s">
 							<tr>
-								<td>1</td>
-								<td class="center">2018/08/09</td>
-								<td class="center">袁锐</td>
+								<td class="center">${t.commentid}</td>
+								<td class="center">${t.time}</td>
+								<td class="center">1</td>
 								<td class="center">
 									<a class="btn btn-info" href="comment_detail.jsp">
 										<i class="icon-edit icon-white"></i>  
@@ -125,6 +125,7 @@
 									</a>
 								</td>
 							</tr>
+							</c:forEach>
 						  </tbody>
 					  </table>            
 					</div>

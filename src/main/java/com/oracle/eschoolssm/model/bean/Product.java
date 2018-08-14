@@ -1,6 +1,10 @@
 package com.oracle.eschoolssm.model.bean;
 
+import java.util.List;
+
 public class Product {
+
+
     private int productid;
     private String name;
     private int costprice;
@@ -9,12 +13,14 @@ public class Product {
     private int quality;
     private String describle;
     private String endtime;
-    private String strattime;
+    private String starttime;
     private int promotion;
     private int count;
     private int shelves;
     private int id;
     private int userid;
+
+    private List<Comment> comments;
 
     public int getProductid() {
         return productid;
@@ -80,12 +86,12 @@ public class Product {
         this.endtime = endtime;
     }
 
-    public String getStrattime() {
-        return strattime;
+    public String getStarttime() {
+        return starttime;
     }
 
-    public void setStrattime(String strattime) {
-        this.strattime = strattime;
+    public void setStarttime(String starttime) {
+        this.starttime = starttime;
     }
 
     public int getPromotion() {
@@ -126,5 +132,34 @@ public class Product {
 
     public void setUserid(int userid) {
         this.userid = userid;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productid=" + productid +
+                ", name='" + name + '\'' +
+                ", costprice=" + costprice +
+                ", nowprice=" + nowprice +
+                ", discount=" + discount +
+                ", quality=" + quality +
+                ", describle='" + describle + '\'' +
+                ", endtime='" + endtime + '\'' +
+                ", starttime='" + starttime + '\'' +
+                ", promotion=" + promotion +
+                ", count=" + count +
+                ", shelves=" + shelves +
+                ", id=" + id +
+                ", userid=" + userid +
+                ", comments=" + comments +
+                '}';
     }
 }

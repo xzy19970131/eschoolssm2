@@ -118,7 +118,7 @@
 							<ul class="dashboard-list">
 								<li>								
 									<a href="#">
-										<img class="dashboard-avatar" alt="Usman" src="http://www.gravatar.com/avatar/f0ea51fa1e4fae92608d8affee12f67b.png?s=50"></a>
+										<img class="dashboard-avatar" alt="Usman" src="${user.image}"></a>
 								</li>
 								<li>
 									<strong></strong><br>
@@ -126,27 +126,26 @@
 								</li>								
 								<li>								
 
-									<strong>用户名:</strong>yuanrui<br>
-									<strong>真实姓名:</strong>袁锐<br>
-									<strong>性别:</strong>男<br>
-									<strong>年龄:</strong>22<br>
+									<strong>用户名:</strong>${user.username}<br>
+									<strong>真实姓名:</strong>${user.realname}<br>
+									<strong>性别:</strong>${user.sex}<br>
+									<strong>年龄:</strong>${user.age}<br>
 
 								</li>								
 								<li>
-									<strong>QQ:</strong>1121595494<br>
-									<strong>手机号:</strong>18827551075<br>
-									<strong>邮箱:</strong>1121595494@@qq.com<br>
-									<strong>地址:</strong>湖北文理学院15栋308<br>
-									<strong>账号状态:</strong>正常<br>
+									<strong>QQ:</strong>${user.qq}<br>
+									<strong>手机号:</strong>${user.phone}<br>
+									<strong>邮箱:</strong>${user.email}<br>
+									<strong>地址:</strong>${user.address}<br>
+									<strong>账号状态:</strong>${user.statue}<br>
 
 
 								</li>
 								<li>
 									<strong>创建时间:</strong>${user.createtime}<br>
-									<strong>IP:</strong>172.19.22.111\<br>
-									<strong>登录次数:</strong>30<br>
-									<strong>上线时间:</strong>2018/08/09 12:00:10<br>
-									<strong>下线时间:</strong>2018/08/09 12:01:00<br>
+									<strong>IP:</strong><br>
+									<strong>上线时间:</strong><br>
+									<strong>下线时间:</strong><br>
 								</li>
 							</ul>
 						</div>						

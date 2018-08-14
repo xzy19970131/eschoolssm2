@@ -17,11 +17,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
 import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.InputStream;
 import java.util.List;
 
@@ -45,45 +48,53 @@ public class AdminController {
      * @return
      */
     @RequestMapping("/login")
-    public String  processLogin(@ModelAttribute("admin") Admin admin){
-        System.out.println("进入管理员登录");
+    public String  processLogin(HttpServletRequest request,@ModelAttribute("admin") Admin admin){
+        System.out.println(admin);
         Admin u=adminService.processLogin(admin);
         if(u==null)
         {
             return "login";
         }else
         {
+            HttpSession session = request.getSession();
+            session.setAttribute("admin",admin);
+            System.out.println("进入管理员登录"+admin);
             return "admin_add_user";
         }
 
     }
 
-    /**
-     * 添加管理员
-     * @param admin
-     * @return
-     */
     @RequestMapping("/addAdmin")
-    public String  addAdmin(@ModelAttribute("admin") Admin admin){
-        System.out.println("进入管理员添加");
-        boolean u=adminService.processAddAdmin(admin);
-        if(u==false)
+    public String  adminAdd(HttpServletRequest request,@ModelAttribute("admin") Admin admin){
+        System.out.println("进了Control的addAdmin");
+
+        System.out.println("输出:"+admin);
+        Boolean result=adminService.processAddAdmin(admin);
+        if(result==false)
         {
             return "admin_add_user";
         }else
         {
             return "admin_list";
         }
+/*        request.getParameter("");*/
+
     }
 
     /**
      * 删除管理员
-     * @param admin
+     * @param adminid
      * @return
      */
-    @RequestMapping("/add")
-    public String  deleteAdmin(@ModelAttribute("admin") Admin admin){
-        return "admin_add_user";
+    @RequestMapping(value = "/deleteAdmin")
+    public String  deleteAdmin(@RequestParam("adminid")int adminid,Model model){
+        System.out.println("进入到删除admin");
+        System.out.println("adminid:"+adminid);
+        adminService.processdeleteAdmin(adminid);
+        List<Admin> admins=adminService.processlistAdmin(1,2);
+        model.addAttribute("allAdmin",admins);
+        return "admin_list";
+
     }
 
     /**
@@ -99,14 +110,29 @@ public class AdminController {
             System.out.println(a);
         } return "admin_list";
     }
-
+    /**
+     * 管理员注销登录
+     * @param session
+     * @return
+     */
+    @RequestMapping("/adminout")
+    public String  outAdminlogin(HttpSession session){
+        System.out.println("进入到管理员注销登录");
+       session.invalidate();
+       return "login";
+    }
 
     @RequestMapping("/exportAdmin")
     public void export(HttpServletResponse response) throws Exception {
+        System.out.println("进入到导出adminExcel");
         InputStream is = adminService.getInputStream();
         response.setContentType("application/vnd.ms-excel");
-        response.setHeader("contentDisposition", "attachment;filename=AllUsers.xls");
+        response.setHeader("contentDisposition", "attachment;filename=AllAdmins.xls");
         ServletOutputStream output = response.getOutputStream();
         IOUtils.copy(is, output);
     }
+
+
+
+
 }

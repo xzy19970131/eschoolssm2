@@ -2,16 +2,43 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.oracle.eschoolssm.model.dao.UserDAO">
-
+    <!-- 定义数据库字段与实体对象的映射关系 -->
+    <resultMap id="userMap" type="com.oracle.eschoolssm.model.bean.User">
+        <id property="userid" column="userid"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="sex" column="sex"/>
+        <result property="age" column="age"/>
+        <result property="qq" column="qq"/>
+        <result property="phone" column="phone"/>
+        <result property="email" column="email"/>
+        <result property="image" column="image"/>
+        <result property="address" column="address"/>
+        <result property="createtime" column="createtime"/>
+        <result property="statue" column="statue"/>
+        <result property="realname" column="realname"/>
+        <!-- 一对多的关系 -->
+        <!-- property: 指的是集合属性的值, ofType：指的是集合中元素的类型 -->
+        <collection property="logininfo" ofType="com.oracle.eschoolssm.model.bean.Logininfo">
+            <id property="logininfoid" column="logininfoid" />
+            <result property="ip" column="ip" />
+            <result property="logintime" column="logintime" />
+            <result property="endtime" column="endtime" />
+        </collection>
+    </resultMap>
 
     <select id="getUserByID"   resultType="com.oracle.eschoolssm.model.bean.User">
-
         select *  from USER where userid=#{0};
-
     </select>
+
+    <!--列出所有用户包括登录信息-->
     <select id="listUser"   resultType="com.oracle.eschoolssm.model.bean.User">
         select *  from USER;
     </select>
 
+    <!--Excel导出所有用户包括登录信息-->
+    <select id="getUserList" resultMap="userMap">
+        select *  from user;
+    </select>
 
 </mapper>

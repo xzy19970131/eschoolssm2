@@ -105,17 +105,17 @@
 					    <form id="myform" runat="server" action="/addAdmin" method="post">
                         <p>
                             <label>用户名：</label>
-							<input type="text" name="user" />
+							<input type="text" name="username" />
                         </p>
                         <p class="col">
                             <label>密码：</label>
 							<input type="password"  name="password" />
                             <label>姓名：</label>
-                            <input type="password"  name="repassword" />
+                            <input type="password"  name="xingming" />
 							<label>手机号：</label>
-							<input type="password"  name="repassword" />
+							<input type="password"  name="phone" />
 							<label>地址：</label>
-							<input type="password"  name="repassword" />
+							<input type="password"  name="address" />
                         </p>
 						<p>
 							<label>授权限：</label>
@@ -126,6 +126,7 @@
 							<input type="checkbox"  id ="a5" value="news">线下集市管理
 							<input type="checkbox"  id ="a6" value="news">二手经纪人管理
 						</p>
+
                          <p> 
 						    <input type="submit" value="添加" class="btn btn-large" />
                         </p>
@@ -136,9 +137,30 @@
 			</div>
 			</div>
 		</div>
-		</div>
 
-					
+		</div>
+		<script>
+			function check()
+			{
+			    var b1=0,b2=0,b3=0,b4=0,b5=0,b6=0;
+
+				if(document.getElementById('a1').checked)b1=1;
+                if(document.getElementById('a2').checked)b2=1;
+                if(document.getElementById('a3').checked)b3=1;
+                if(document.getElementById('a4').checked)b4=1;
+                if(document.getElementById('a5').checked)b5=1;
+                if(document.getElementById('a6').checked)b6=1;
+                form1.c1.value=b1;
+                form1.c2.value=b2;
+                form1.c3.value=b3;
+                form1.c4.value=b4;
+                form1.c5.value=b5;
+                form1.c6.value=b6;
+                $()
+
+			}
+
+		</script>
 
 	<!-- external javascript
 	================================================== -->

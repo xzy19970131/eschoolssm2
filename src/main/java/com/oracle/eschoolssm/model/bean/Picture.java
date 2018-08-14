@@ -1,5 +1,4 @@
 package com.oracle.eschoolssm.model.bean;
 
-public class Orders {
-
+public class Picture {
 }
